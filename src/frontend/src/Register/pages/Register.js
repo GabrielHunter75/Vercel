@@ -31,11 +31,15 @@ export const RegisterPage = () => {
       data_criacao: new Date(),
       eventos_inscritos: [],
       eventos_criados: [],
-      tipo_usuario: "normal",
+      role: "normal",
     };
 
+
+    console.log("Dados enviados para o backend:", formData);
+
+
     try {
-      const response = await fetch("http://localhost:3001/api/v1/usuarios", {
+      const response = await fetch("http://localhost:3000/api/v1/usuarios", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

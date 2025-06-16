@@ -154,7 +154,7 @@ export default function CriarEvento() {
         };
 
         try {
-            const response = await fetch('http://localhost:3001/api/v1/eventos', {
+            const response = await fetch('http://localhost:3000/api/v1/eventos', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(novoEvento)

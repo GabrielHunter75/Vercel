@@ -17,7 +17,7 @@ const EventoDetalhado = () => {
   };
 
   const { data: evento, error } = useSWR(
-    `http://localhost:3001/api/v1/eventos/${id}`,
+    `http://localhost:3000/api/v1/eventos/${id}`,
     fetcher,
   );
 

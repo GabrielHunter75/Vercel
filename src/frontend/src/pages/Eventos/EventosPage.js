@@ -38,8 +38,8 @@ const EventosPage = () => {
   // Só usa o userIdQuery se for igual ao usuário logado para evitar furos de segurança no frontend
   const endpoint =
     meusEventos && user && user._id === userIdQuery
-      ? `http://localhost:3001/api/v1/meus-eventos/${user._id}`
-      : 'http://localhost:3001/api/v1/eventos';
+      ? `http://localhost:3000/api/v1/meus-eventos/${user._id}` // <-- Mudei aqui
+    : 'http://localhost:3000/api/v1/eventos'; //
 
   const { data: eventos, error, isLoading, mutate } = useSWR(endpoint, fetcher);
 

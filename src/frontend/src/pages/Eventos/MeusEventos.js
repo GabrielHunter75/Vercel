@@ -20,7 +20,7 @@ const MeusEventos = () => {
         const fetchMeusEventos = async () => {
             try {
                 // Ajuste aqui para o endpoint correto da sua API:
-                const response = await axios.get(`http://localhost:3001/api/v1/eventos/usuario/${user._id}`);
+                const response = await axios.get(`http://localhost:3000/api/v1/eventos/usuario/${user._id}`);
                 setEventos(response.data);
                 setLoading(false);
             } catch (err) {
@@ -44,7 +44,7 @@ const MeusEventos = () => {
     const handleDeletar = async (id) => {
         if (window.confirm('Tem certeza que deseja deletar este evento e todos os seus ingressos?')) {
             try {
-                await axios.delete(`http://localhost:3001/api/v1/eventos/${id}`);
+                await axios.delete(`http://localhost:3000/api/v1/eventos/${id}`);
                 // Remove o evento da lista após a exclusão bem-sucedida
                 setEventos(eventos.filter(evento => evento._id !== id));
                 alert('Evento deletado com sucesso!');
@@ -85,7 +85,7 @@ const MeusEventos = () => {
                         >
                             {evento.imagem && (
                                 <img
-                                    src={evento.imagem.startsWith('data:image') ? evento.imagem : `http://localhost:3001/uploads/${evento.imagem.split('/').pop()}`}
+                                    src={evento.imagem.startsWith('data:image') ? evento.imagem : `http://localhost:3000/uploads/${evento.imagem.split('/').pop()}`}
                                     alt={evento.titulo}
                                     style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '8px', marginBottom: '15px' }}
                                 />

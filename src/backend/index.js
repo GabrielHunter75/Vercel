@@ -1,3 +1,5 @@
+require('dotenv').config(); // Adicione esta linha no TOPO do seu index.js
+
 const express = require("express");
 const { connectDB } = require("./db"); // <-- importa a função connectDB corretamente
 const cors = require("cors");
@@ -14,7 +16,7 @@ const relatoriosRouter = require("./routes/relatorios");
 const uploadsRouter = require("./routes/uploads");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Conexão com o banco de dados
 connectDB(app)

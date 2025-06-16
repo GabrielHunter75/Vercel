@@ -34,7 +34,7 @@ const Patrocinio = () => {
             setError(null);
             try {
                 // Busca o título do evento para exibir na página de patrocínio
-                const response = await fetch(`http://localhost:3001/api/v1/eventos/${id}`);
+                const response = await fetch(`http://localhost:3000/api/v1/eventos/${id}`);
                 if (!response.ok) {
                     throw new Error(`Erro ao buscar evento: ${response.statusText}`);
                 }
@@ -69,7 +69,7 @@ const Patrocinio = () => {
 
         try {
             setLoading(true);
-            const response = await fetch('http://localhost:3001/api/v1/gerar-pix', {
+            const response = await fetch('http://localhost:3000/api/v1/gerar-pix', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
